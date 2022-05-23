@@ -66,48 +66,55 @@
             app:layout_constraintVertical_bias="0.038"
             tools:ignore="UnusedAttribute" />
 
-        <ImageView
-            android:id="@+id/wellBeingImage"
-            android:layout_width="70dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="232dp"
-            android:contentDescription="@string/well_being_image"
-            android:src="@drawable/wellbeing"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/app_slogan" />
-
-        <TextView
-            android:id="@+id/app_description"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="30dp"
-            android:fontFamily="@font/roboto_thin"
-            android:text="@string/pillsTime_description"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textFontWeight="400"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wellBeingImage"
-            tools:ignore="UnusedAttribute" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp">
+
+            <ImageView
+                android:id="@+id/wellBeingImage"
+                android:layout_width="70dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="232dp"
+                android:contentDescription="@string/well_being_image"
+                android:src="@drawable/wellbeing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/app_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/roboto_thin"
+                android:text="@string/pillsTime_description"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wellBeingImage"
+                tools:ignore="UnusedAttribute" />
 
 
-        <ImageView
-            android:id="@+id/continueWithHuaweiId"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:contentDescription="@string/continue_with_huawei_id"
-            android:src="@drawable/continue_with_huawei_id_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/app_description" />
+            <ImageView
+                android:id="@+id/continueWithHuaweiId"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25dp"
+                android:contentDescription="@string/continue_with_huawei_id"
+                android:src="@drawable/continue_with_huawei_id_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/app_description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
