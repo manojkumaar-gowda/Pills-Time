@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Pills Time</string>
+    <string name="splash_screen_logo_desc">Splash screen logo</string>
+    <string name="exit">Exit</string>
+    <string name="pills_time_slogan">Easy Reminder, Easy Tracking</string>
+    <string name="pillsTime_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="well_being_image">Well Being Imge</string>
+    <string name="pills_time_logo">Pills Time Logo</string>
+    <string name="huawei_logo">Huawei logo</string>
+    <string name="continue_with_huawei_id">Continue with Huawei Id</string>
+    <string name="reg">Reg</string>
 </resources>

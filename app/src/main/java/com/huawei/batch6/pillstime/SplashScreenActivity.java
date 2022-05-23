@@ -18,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         final Handler handler = new Handler();
         handler.postDelayed(() -> {
             Intent send = new Intent(getApplicationContext(),
-                    MainActivity.class);
+                    LoginActivity.class);
             startActivity(send);
             finish();
         }, 2300);
