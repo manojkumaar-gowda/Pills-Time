@@ -9,4 +9,11 @@
     <string name="huawei_logo">Huawei logo</string>
     <string name="continue_with_huawei_id">Continue with Huawei Id</string>
     <string name="reg">Reg</string>
+    <string name="search_for_medicine">Search for Medicine</string>
+    <string name="back">Back</string>
+    <string name="no_medicines_found">No medicines found</string>
+    <string name="no_meds_found_text">Sorry for the inconvieniences.\n We would want you to consult a doctor for your treatment. Please click below to view the nearby hospitals</string>
+    <string name="locate_hospitals_in_search_meds">Locate Hospitals/Pharmacies near me</string>
+    <string name="start_typing_your_symptoms">Start typing your symptoms</string>
+    <string name="statistics">Statistics</string>
 </resources>
