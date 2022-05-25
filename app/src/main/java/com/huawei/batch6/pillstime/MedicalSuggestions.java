@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+//import android.widget.EditText;
 import android.widget.TextView;
 
 public class MedicalSuggestions extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class MedicalSuggestions extends AppCompatActivity {
         setContentView(R.layout.activity_medical_suggestions);
         TextView backButton = findViewById(R.id.back);
         backButton.setOnClickListener(view -> exitFunction());
-        EditText search = findViewById(R.id.search);
+       // EditText search = findViewById(R.id.search);
 
         //Temporary
         TextView regButton = findViewById(R.id.statistics);

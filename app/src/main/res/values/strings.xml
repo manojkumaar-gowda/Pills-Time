@@ -16,4 +16,5 @@
     <string name="locate_hospitals_in_search_meds">Locate Hospitals/Pharmacies near me</string>
     <string name="start_typing_your_symptoms">Start typing your symptoms</string>
     <string name="statistics">Statistics</string>
+    <string name="detailed_statistics">Detailed Statistics</string>
 </resources>
