@@ -119,4 +119,19 @@
     <string name="title_notifications">Notifications</string>
     <string name="dashboard">Dash</string>
     <string name="medical_suggestions">Med</string>
+    <string name="title_activity_dashboard2">Dashboard2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="add_medication">Add medication</string>
+    <string name="hello">Hello</string>
+    <string name="michella">Michella</string>
+    <string name="here_s_what_you_have_for_today">Here’s what you have for today</string>
+    <string name="no_reminders_image">No reminders image</string>
+    <string name="no_reminders_for_today">No Reminders for today</string>
 </resources>
