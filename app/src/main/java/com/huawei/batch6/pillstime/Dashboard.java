@@ -6,24 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        TextView exitButton = findViewById(R.id.exit);
-        exitButton.setOnClickListener(view -> exitFunction());
-        TextView regButton = findViewById(R.id.reg);
+        setContentView(R.layout.activity_dashboard);
+        TextView regButton = findViewById(R.id.medical_sugestions);
         regButton.setOnClickListener(view -> regFunction());
     }
-    public void exitFunction(){
-        finish();
-        System.exit(0);
-    }
-
     public void regFunction(){
-        Intent send = new Intent(LoginActivity.this, Dashboard.class);
+        Intent send = new Intent(Dashboard.this, MedicalSuggestions.class);
         startActivity(send);
     }
 }
