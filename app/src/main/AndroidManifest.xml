@@ -10,14 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsTime">
         <activity
-            android:name=".Dashboard"
+            android:name=".AccountRegistration"
             android:exported="false" />
         <activity
             android:name=".DetailedStatistics"
             android:exported="false" />
-        <activity
-            android:name=".Statistics"
-            android:exported="false" />
+
         <activity
             android:name=".MedicalSuggestions"
             android:exported="false" />

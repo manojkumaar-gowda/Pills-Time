@@ -17,16 +17,11 @@ public class MedicalSuggestions extends AppCompatActivity {
         backButton.setOnClickListener(view -> exitFunction());
        // EditText search = findViewById(R.id.search);
 
-        //Temporary
-        TextView regButton = findViewById(R.id.statistics);
-        regButton.setOnClickListener(view -> statFunction());
+
     }
     public void exitFunction(){
         finish();
     }
-    public void statFunction(){
-        Intent send = new Intent(MedicalSuggestions.this, Statistics.class);
-        startActivity(send);
-    }
+
 
 }

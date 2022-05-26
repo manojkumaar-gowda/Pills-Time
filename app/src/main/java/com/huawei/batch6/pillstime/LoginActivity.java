@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void regFunction(){
-        Intent send = new Intent(LoginActivity.this, Dashboard.class);
+        Intent send = new Intent(LoginActivity.this,MainActivity.class);
         startActivity(send);
     }
 }

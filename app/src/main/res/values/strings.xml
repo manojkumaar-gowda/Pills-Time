@@ -134,4 +134,6 @@
     <string name="here_s_what_you_have_for_today">Here’s what you have for today</string>
     <string name="no_reminders_image">No reminders image</string>
     <string name="no_reminders_for_today">No Reminders for today</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
