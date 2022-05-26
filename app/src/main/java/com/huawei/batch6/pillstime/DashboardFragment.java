@@ -52,24 +52,16 @@ public class DashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        TextView regButton = v.findViewById(R.id.medical_sugestions);
-        regButton.setOnClickListener(view -> regFunction());
         FloatingActionButton fab = v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent send = new Intent(getActivity(),AddNewMedication.class);
+                startActivity(send);
             }
         });
         return v;
     }
 
 
-
-
-    public void regFunction(){
-        Intent send = new Intent(getActivity(),MedicalSuggestions.class);
-        startActivity(send);
-    }
 }

@@ -1,11 +1,13 @@
 package com.huawei.batch6.pillstime;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.huawei.batch6.pillstime.databinding.ActivityMainBinding;
 
@@ -34,6 +36,25 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.pills_time_logo)
+                .setTitle("Pills-Time")
+                .setMessage("Are you sure you want to close this application?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(1);
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     private void replaceFragment(Fragment fragment){

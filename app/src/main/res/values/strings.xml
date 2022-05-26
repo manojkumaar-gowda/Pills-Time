@@ -118,12 +118,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="dashboard">Dash</string>
-    <string name="medical_suggestions">Med</string>
+    <string name="medical_suggestions">Medical Suggestions</string>
     <string name="title_activity_dashboard2">Dashboard2</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
@@ -136,4 +135,26 @@
     <string name="no_reminders_for_today">No Reminders for today</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">Next</string>
+    <string name="add_new_medication">Add new Medication</string>
+    <string name="name_of_the_medication">Name of the Medication</string>
+    <string name="brand">Brand</string>
+    <string name="medical_history">Medical History</string>
+    <string name="recommended_doctor">Recommended Doctor</string>
+    <string name="scan_and_fetch_medicine_details">Scan and Fetch Medicine Details</string>
+    <string name="relax_while_we_fetch_the_medicine_details_for_you">Relax while we fetch the medicine details for you</string>
+    <string name="get_dedicated_medical_recommendations_for_your_symptoms">Get dedicated medical recommendations for your symptoms</string>
+    <string name="finish">Finish</string>
+    <string name="no_of_doses">No of Doses</string>
+    <string name="add_new_dose">Add Dose</string>
+    <string name="no_of_units_left">No.of units left</string>
+    <string name="instructions">Instructions</string>
+    <string name="ringing_at">Will Notify @</string>
+    <string name="time">Click to select time</string>
+    <string name="add">ADD</string>
+    <string name="units">Units</string>
+    <string name="add_dose">ADD DOSE</string>
+    <string name="click_to_select_start_date">Click to select Start Date</string>
+    <string name="how_long_days">How long?(days)</string>
+    <string name="na">NA</string>
 </resources>

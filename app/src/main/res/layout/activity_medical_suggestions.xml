@@ -35,7 +35,6 @@
         android:autofillHints=""
         android:background="@drawable/edit_text_circular_border"
         android:drawableEnd="@drawable/search"
-        android:fontFamily="@font/roboto_thin"
         android:hint="@string/start_typing_your_symptoms"
         android:inputType="text"
         android:padding="10dp"
