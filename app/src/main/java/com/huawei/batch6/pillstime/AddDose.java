@@ -3,7 +3,6 @@ package com.huawei.batch6.pillstime;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +21,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +36,7 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
     //private Spinner units;
     String[] doseUnits = {"Units", "mg", "ml"};
     String[] dayTypes = {"Everyday","Specific Days of week","Custom days"};
-    List<String> timeList = new ArrayList<>();
+    ArrayList<TimeModel> timeList = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -133,20 +134,29 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
             TextView timer = findViewById(R.id.time);
             String t = timer.getText().toString();
             if(!t.equals("Click to select time")){
-                if(timeList.contains(t)){
-                    timer.setText("Click to select time");
-                    return;
-                }
-                timeList.add(t);
+                RecyclerView courseRV = findViewById(R.id.idRVCourse);
+                timeList.add(new TimeModel(t));
+                TimeAdapter timeAdapter = new TimeAdapter(timeList);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+                courseRV.setLayoutManager(linearLayoutManager);
+                courseRV.setAdapter(timeAdapter);
                 timer.setText("Click to select time");
-                StringBuilder timesString = new StringBuilder();
-                for(String time:timeList){
-                    timesString.append(" ~ ").append(time);
-                }
-                timesString.delete(0,3);
-                TextView timeList = findViewById(R.id.timeList);
-                timeList.setText(timesString);
-                Toast.makeText(getApplicationContext(), timesString, Toast.LENGTH_SHORT).show();
+
+
+                //RecyclerView Listener
+                courseRV.addOnItemTouchListener(new RecyclerItemClickListener(AddDose.this, courseRV, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        timeList.remove(position);
+                        courseRV.setLayoutManager(linearLayoutManager);
+                        courseRV.setAdapter(timeAdapter);
+                    }
+                    @Override
+                    public void onItemLongClick(View view, int position) {
+                        // Long item click
+                    }
+                }));
+
             }else{
                 Toast.makeText(getApplicationContext(), "Select time", Toast.LENGTH_SHORT).show();
             }
@@ -156,6 +166,15 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
         TextView from = findViewById(R.id.from);
         //set listener on button click
         from.setOnClickListener(view -> showDatePickerDialog());
+
+
+
+
+
+
+
+
+
 
     }
     @Override
