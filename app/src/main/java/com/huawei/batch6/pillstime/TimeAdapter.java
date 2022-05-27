@@ -3,7 +3,6 @@ package com.huawei.batch6.pillstime;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,7 +23,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.Viewholder> {
     @Override
     public TimeAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // to inflate the layout for each item of recycler view.
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card_view_trial, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.add_time_layout, parent, false);
         return new Viewholder(view);
     }
 
@@ -32,7 +31,8 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.Viewholder> {
     public void onBindViewHolder(@NonNull TimeAdapter.Viewholder holder, int position) {
         // to set data to textview and imageview of each card layout
         TimeModel model = timeModelArrayList.get(position);
-        holder.courseRatingTV.setText("" + model.getCourse_rating());
+        String s = "" + model.getTime();
+        holder.time.setText(s);
     }
 
     @Override
@@ -44,13 +44,12 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.Viewholder> {
 
     // View holder class for initializing of
     // your views such as TextView and Imageview.
-    public class Viewholder extends RecyclerView.ViewHolder {
-        private ImageView courseIV;
-        private TextView courseNameTV, courseRatingTV;
+    public static class Viewholder extends RecyclerView.ViewHolder {
+        private final TextView time;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            courseRatingTV = itemView.findViewById(R.id.timeView);
+            time = itemView.findViewById(R.id.timeView);
         }
     }
 }

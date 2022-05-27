@@ -3,15 +3,15 @@ package com.huawei.batch6.pillstime;
 public class TimeModel {
 
 
-    private String course_rating;
+    private final String time;
     // Constructor
-    public TimeModel(String course_rating) {
-        this.course_rating = course_rating;
+    public TimeModel(String time) {
+        this.time = time;
 
     }
 
-    public String getCourse_rating() {
-        return course_rating;
+    public String getTime() {
+        return time;
     }
 
 

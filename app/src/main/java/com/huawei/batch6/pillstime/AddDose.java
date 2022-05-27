@@ -134,6 +134,17 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
             TextView timer = findViewById(R.id.time);
             String t = timer.getText().toString();
             if(!t.equals("Click to select time")){
+
+                for(TimeModel model: timeList){
+                    if(model.getTime().equals(t)){
+                        timer.setText("Click to select time");
+                        return;
+                    }
+                }
+
+
+
+
                 RecyclerView courseRV = findViewById(R.id.idRVCourse);
                 timeList.add(new TimeModel(t));
                 TimeAdapter timeAdapter = new TimeAdapter(timeList);
