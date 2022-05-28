@@ -1,101 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardFragment"
-    >
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F3F2F2"
-        tools:context=".MainActivity">
+    android:background="#F3F2F2"
+    tools:context=".DashboardFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dashboard_layout_bg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:background="#F3F2F2"
+            tools:context=".MainActivity">
 
-            <TextView
-                android:id="@+id/Hello"
-                android:layout_width="wrap_content"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
-                android:text="@string/hello"
-                android:textSize="18sp"
+                android:background="@drawable/dashboard_layout_bg"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/Hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/hello"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/Name"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/michella"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Hello" />
+
+                <TextView
+                    android:id="@+id/msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/here_s_what_you_have_for_today"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/msg">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pillsLeftRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="horizontal" />
+
+                    <TextView
+                        android:id="@+id/locate_hospitals_and_pharmacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ripple_effect"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/locate_hospitals_and_pharmacies"
+                        android:textAlignment="center"
+                        android:textColor="@color/links"
+                        android:textSize="15sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/progressBar" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/msg">
+
+                    <ImageView
+                        android:id="@+id/noRemindersImage"
+                        android:layout_width="289dp"
+                        android:layout_height="406dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:contentDescription="@string/no_reminders_image"
+                        android:src="@drawable/no_reminders"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/noReminders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/no_reminders_for_today"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/noRemindersImage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/michella"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Hello" />
+                android:background="#F3F2F2"
+                app:layout_constraintTop_toBottomOf="@+id/top">
 
-            <TextView
-                android:id="@+id/msg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:fontFamily="@font/roboto_light"
-                android:text="@string/here_s_what_you_have_for_today"
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Name" />
+                <TextView
+                    android:id="@+id/upcoming_events_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/upcoming_events"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/noRemindersImage"
-                android:layout_width="289dp"
-                android:layout_height="406dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:contentDescription="@string/no_reminders_image"
-                android:src="@drawable/no_reminders"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/msg" />
+                <LinearLayout
+                    android:id="@+id/medColumns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/upcoming_events_text">
 
-            <TextView
-                android:id="@+id/noReminders"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
-                android:text="@string/no_reminders_for_today"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/noRemindersImage" />
+                    <TextView
+                        android:id="@+id/time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Time"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
+                    <TextView
+                        android:id="@+id/Medicines_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Medicines"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/add_medication"
+        android:src="@drawable/add_medication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/add_medication"
-            android:src="@drawable/add_medication"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="links">#238C9A</color>
     <color name="time_background">#E6E6E6</color>
+    <color name="red">#FB0606</color>
 
 
     <color name="dayPressed">@color/black</color>
@@ -22,4 +23,31 @@
     <color name="daySelectedAndDisabledTextColor">@color/daySelectedTextColor</color>
     <color name="dayDeselectedAndDisabled">@color/dayDeselected</color>
     <color name="dayDeselectedAndDisabledTextColor">@android:color/darker_gray</color>
+
+    <array name="note_neutral_colors">
+        <item>#FFF8E0</item>
+        <item>#D9FFD8</item>
+        <item>#D8DEFF</item>
+        <item>#D8F3FF</item>
+        <item>#FFEBD8</item>
+        <item>#FFD8D8</item>
+        <item>#F1E7F4</item>
+        <item>#D3ECF6</item>
+        <item>#F3F2F2</item>
+        <item>#FFFFFF</item>
+
+    </array>
+
+    <array name="note_accent_colors">
+        <item>#D8DEFF</item>
+        <item>#D8F3FF</item>
+        <item>#FFEBD8</item>
+        <item>#FFD8D8</item>
+        <item>#F2E7F6</item>
+        <item>#D3ECF6</item>
+        <item>#F3F2F2</item>
+        <item>#FFF8E0</item>
+        <item>#D9FFD8</item>
+        <item>#FFFFFF</item>
+    </array>
 </resources>

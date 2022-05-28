@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 
 
 public class DashboardFragment extends Fragment {
@@ -53,14 +54,46 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
         FloatingActionButton fab = v.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent send = new Intent(getActivity(),AddNewMedication.class);
-                startActivity(send);
-            }
+        fab.setOnClickListener(view -> {
+            Intent send = new Intent(getActivity(),AddNewMedication.class);
+            startActivity(send);
         });
+
+
+        //Pills
+        RecyclerView refillMedsRV = v.findViewById(R.id.pillsLeftRV);
+        ArrayList<RefillPillsModel> refillMedsModelArrayList;
+        // here we have created new array list and added data to it.
+        refillMedsModelArrayList = new ArrayList<>();
+        refillMedsModelArrayList.add(new RefillPillsModel("8\nLeft","Biocon","Tacrolimus","750mg",getRandomColor(DashboardFragment.this)));
+        refillMedsModelArrayList.add(new RefillPillsModel("8\nLeft","Biocon","Prograf","750mg",getRandomColor(DashboardFragment.this)));
+        refillMedsModelArrayList.add(new RefillPillsModel("8\nLeft","Biocon","Wysolone","750mg",getRandomColor(DashboardFragment.this)));
+        refillMedsModelArrayList.add(new RefillPillsModel("8\nLeft","Biocon","Cellcept","750mg",getRandomColor(DashboardFragment.this)));
+
+
+        // we are initializing our adapter class and passing our arraylist to it.
+        RefillPillsAdapter courseAdapter = new RefillPillsAdapter(null, refillMedsModelArrayList);
+
+        // below line is for setting a layout manager for our recycler view.
+        // here we are creating vertical list so we will provide orientation as vertical
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(null, LinearLayoutManager.HORIZONTAL, false);
+
+        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+        refillMedsRV.setLayoutManager(linearLayoutManager);
+        refillMedsRV.setAdapter(courseAdapter);
+
+
         return v;
+    }
+
+    private static int getRandomColor(DashboardFragment context) {
+        int[] colors;
+        if (Math.random() >= 0.6) {
+            colors = context.getResources().getIntArray(R.array.note_accent_colors);
+        } else {
+            colors = context.getResources().getIntArray(R.array.note_neutral_colors);
+        }
+        return colors[((int) (Math.random() * colors.length))];
     }
 
 

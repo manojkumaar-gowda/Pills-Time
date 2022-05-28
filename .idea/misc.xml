@@ -9,33 +9,40 @@
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/dashboard_layout_bg.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/edit_text_border.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/edit_text_circular_border.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/ripple_effect.xml" value="0.1765625" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/switch_thumb.xml" value="0.1578125" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/switch_track.xml" value="0.1578125" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/font/roboto.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_account_registration.xml" value="0.2" />
-        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_add_dose.xml" value="0.264" />
-        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_add_new_medication.xml" value="0.264" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_add_dose.xml" value="0.14" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_add_new_medication.xml" value="0.14" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_card_view_trial.xml" value="0.2" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_detailed_statistics.xml" value="0.2" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_login.xml" value="0.136" />
-        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_main.xml" value="0.16203703703703703" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_medical_suggestions.xml" value="0.176" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_splash_screen.xml" value="0.19427083333333334" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/activity_statistics.xml" value="0.2" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/add_time_layout.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/content_dashboard2.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/content_scrolling.xml" value="0.11367753623188406" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/dashboard_fragment.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/edit_meds_fragment.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/edit_text_border.xml" value="0.22644927536231885" />
-        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_dashboard.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_dashboard.xml" value="0.152" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_edit_meds.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_first.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_profile.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_second.xml" value="0.21666666666666667" />
-        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_statistics.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/fragment_statistics.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/location.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/meds_layout.xml" value="0.152" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/profile_statistics.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/refill_meds_layout.xml" value="0.264" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/spinner_item.xml" value="0.21197916666666666" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/statistics_fragment.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/layout/upcoming_events_layout.xml" value="0.264" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/menu/menu_scrolling.xml" value="0.19583333333333333" />

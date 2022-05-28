@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Statistics"
     android:background="@color/white">
     <!--Back-->
     <TextView
@@ -16,6 +15,7 @@
         android:layout_marginTop="25dp"
         android:text="@string/back"
         android:textColor="@color/links"
+        android:background="@drawable/ripple_effect"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

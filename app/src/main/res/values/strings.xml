@@ -158,4 +158,7 @@
     <string name="how_long_days">How long?(days)</string>
     <string name="na">NA</string>
     <string name="deletetime">deleteTime</string>
+    <string name="locate_hospitals_and_pharmacies">Locate Hospitals and Pharmacies</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="enter_the_name_of_the_medicine">Enter the name of the medicine</string>
 </resources>
