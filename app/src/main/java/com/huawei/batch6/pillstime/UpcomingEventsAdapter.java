@@ -1,9 +1,12 @@
 package com.huawei.batch6.pillstime;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,11 +33,14 @@ public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsA
         return new Viewholder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull UpcomingEventsAdapter.Viewholder holder, int position) {
         // to set data to textview and imageview of each card layout
         UpcomingEventsModel model = upcomingEventsModels.get(position);
         holder.time.setText(model.getTime());
+        holder.meds.setText(model.getMeds());
+        holder.meds.setBackgroundColor(model.getColor());
 
     }
 
@@ -49,12 +55,13 @@ public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsA
     // your views such as TextView and Imageview.
     public class Viewholder extends RecyclerView.ViewHolder {
         private TextView time;
-        private CardView meds;
+        private TextView meds;
+        private CardView color;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.timeRV);
-            //meds = itemView.findViewById(R.id.medsListRV);
-
+            meds = itemView.findViewById(R.id.medsRV);
+            color = itemView.findViewById(R.id.upcoming_events);
         }
     }
 }

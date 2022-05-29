@@ -1,14 +1,20 @@
 package com.huawei.batch6.pillstime;
 
-import androidx.cardview.widget.CardView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UpcomingEventsModel {
     private String time;
-    private CardView meds;
+    private String meds;
+    private int color;
 
-    public UpcomingEventsModel(String time, CardView meds) {
-        this.time = time;
-        this.meds = meds;
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 
     public String getTime() {
@@ -19,13 +25,17 @@ public class UpcomingEventsModel {
         this.time = time;
     }
 
-    public CardView getMeds() {
+    public String getMeds() {
         return meds;
     }
 
-    public void setMeds(CardView meds) {
+    public void setMeds(String meds) {
         this.meds = meds;
     }
 
-
+    public UpcomingEventsModel(String time, String meds,int color) {
+        this.time = time;
+        this.meds = meds;
+        this.color = color;
+    }
 }
