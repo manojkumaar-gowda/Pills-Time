@@ -92,7 +92,7 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
         TextView backButton = findViewById(R.id.back);
         backButton.setOnClickListener(view -> backFunction());
 
-        //Finish button
+        //Finish  button
         TextView finishButton = findViewById(R.id.finish);
         finishButton.setOnClickListener(view -> finishFunction());
 
@@ -223,8 +223,8 @@ public class AddDose extends AppCompatActivity implements AdapterView.OnItemSele
     }
 
     public void finishFunction(){
-        Intent send = new Intent(AddDose.this,MainActivity.class);
-        startActivity(send);
+        Intent send1 = new Intent(AddDose.this,MainActivity.class);
+        startActivity(send1);
     }
 
     private void showDatePickerDialog(){
