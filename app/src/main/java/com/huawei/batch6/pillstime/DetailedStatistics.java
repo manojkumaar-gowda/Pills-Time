@@ -32,33 +32,36 @@ public class DetailedStatistics extends AppCompatActivity {
 
 
 
-
-        RecyclerView refillMedsRV = findViewById(R.id.medsCardView);
-        ArrayList<UpcomingEventsModel> upcomingEventsModels;
+        //Pills
+        RecyclerView medsCardViewRV = findViewById(R.id.detailed_stat_rv);
+        ArrayList<DetailedStatModel> detailedStatModelsArrayList;
         // here we have created new array list and added data to it.
-        upcomingEventsModels = new ArrayList<>();
-        upcomingEventsModels.add(new UpcomingEventsModel("8.00 AM","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
-        upcomingEventsModels.add(new UpcomingEventsModel("8.10 AM","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
-        upcomingEventsModels.add(new UpcomingEventsModel("3.00 PM","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
-        upcomingEventsModels.add(new UpcomingEventsModel("10.00 PM","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
-
+        detailedStatModelsArrayList = new ArrayList<>();
+        detailedStatModelsArrayList.add(new DetailedStatModel("8.00 AM",fullDate,"Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
+        detailedStatModelsArrayList.add(new DetailedStatModel("8.10 AM",fullDate,"Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
+        detailedStatModelsArrayList.add(new DetailedStatModel("3.00 PM",fullDate,"Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
+        detailedStatModelsArrayList.add(new DetailedStatModel("10.00 PM",fullDate,"Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg","Biocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg\nBiocon-Tacrolimus-750mg",getRandomColor(DetailedStatistics.this)));
 
         // we are initializing our adapter class and passing our arraylist to it.
-        UpcomingEventsAdapter upcomingEventsAdapter = new UpcomingEventsAdapter(null, upcomingEventsModels);
+        DetailedStatAdapter detailedStatAdapter = new DetailedStatAdapter(null, detailedStatModelsArrayList);
 
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(null, LinearLayoutManager.VERTICAL, false);
 
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
-        refillMedsRV.setLayoutManager(linearLayoutManager);
-        refillMedsRV.setAdapter(upcomingEventsAdapter);
+        medsCardViewRV.setLayoutManager(linearLayoutManager);
+        medsCardViewRV.setAdapter(detailedStatAdapter);
+
+
+
 
 
     }
     public void backFunction(){
         finish();
     }
+
 
     private static int getRandomColor(DetailedStatistics context) {
         int[] colors;
@@ -69,4 +72,6 @@ public class DetailedStatistics extends AppCompatActivity {
         }
         return colors[((int) (Math.random() * colors.length))];
     }
+
+
 }

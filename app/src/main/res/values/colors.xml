@@ -23,6 +23,7 @@
     <color name="daySelectedAndDisabledTextColor">@color/daySelectedTextColor</color>
     <color name="dayDeselectedAndDisabled">@color/dayDeselected</color>
     <color name="dayDeselectedAndDisabledTextColor">@android:color/darker_gray</color>
+    <color name="warn">#E99074</color>
 
     <array name="note_neutral_colors">
         <item>#FFF8E0</item>
@@ -34,7 +35,7 @@
         <item>#F1E7F4</item>
         <item>#D3ECF6</item>
         <item>#F3F2F2</item>
-        <item>#FFFFFF</item>
+        <item>#EAE1E1</item>
 
     </array>
 
@@ -48,6 +49,6 @@
         <item>#F3F2F2</item>
         <item>#FFF8E0</item>
         <item>#D9FFD8</item>
-        <item>#FFFFFF</item>
+        <item>#EAE1E1</item>
     </array>
 </resources>

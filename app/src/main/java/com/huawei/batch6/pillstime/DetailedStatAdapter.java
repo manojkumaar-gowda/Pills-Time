@@ -1,12 +1,9 @@
 package com.huawei.batch6.pillstime;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,31 +12,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsAdapter.Viewholder> {
+public class DetailedStatAdapter extends RecyclerView.Adapter<DetailedStatAdapter.Viewholder> {
     private Context context;
-    private ArrayList<UpcomingEventsModel> upcomingEventsModels;
+    private ArrayList<DetailedStatModel> detailedStatModels;
 
     // Constructor
-    public UpcomingEventsAdapter(Context context, ArrayList<UpcomingEventsModel> upcomingEventsModels) {
+    public DetailedStatAdapter(Context context, ArrayList<DetailedStatModel> detailedStatModels) {
         this.context = context;
-        this.upcomingEventsModels = upcomingEventsModels;
+        this.detailedStatModels = detailedStatModels;
     }
 
     @NonNull
     @Override
-    public UpcomingEventsAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DetailedStatAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // to inflate the layout for each item of recycler view.
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.upcoming_events_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.detailed_stat_events_layout, parent, false);
         return new Viewholder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull UpcomingEventsAdapter.Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull DetailedStatAdapter.Viewholder holder, int position) {
         // to set data to textview and imageview of each card layout
-        UpcomingEventsModel model = upcomingEventsModels.get(position);
+        DetailedStatModel model = detailedStatModels.get(position);
         holder.time.setText(model.getTime());
-        holder.meds.setText(model.getMeds());
+        holder.date.setText(model.getDate());
+        holder.takenMeds.setText(model.getTakenMeds());
+        holder.leftMeds.setText(model.getLeftMeds());
         //holder.meds.setBackgroundColor(model.getColor());
 
     }
@@ -48,19 +47,23 @@ public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsA
     public int getItemCount() {
         // this method is used for showing number
         // of card items in recycler view.
-        return upcomingEventsModels.size();
+        return detailedStatModels.size();
     }
 
     // View holder class for initializing of
     // your views such as TextView and Imageview.
     public class Viewholder extends RecyclerView.ViewHolder {
         private TextView time;
-        private TextView meds;
+        private TextView date;
+        private TextView takenMeds;
+        private TextView leftMeds;
         private CardView color;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            time = itemView.findViewById(R.id.timeRV);
-            meds = itemView.findViewById(R.id.medsRV);
+            time = itemView.findViewById(R.id.timeRV1);
+            date = itemView.findViewById(R.id.dateRV1);
+            takenMeds = itemView.findViewById(R.id.takenMedsRV1);
+            leftMeds = itemView.findViewById(R.id.leftMedsRV1);
             color = itemView.findViewById(R.id.upcoming_events);
         }
     }

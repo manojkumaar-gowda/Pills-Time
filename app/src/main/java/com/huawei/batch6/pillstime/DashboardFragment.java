@@ -120,7 +120,7 @@ public class DashboardFragment extends Fragment {
         if (Math.random() >= 0.6) {
             colors = context.getResources().getIntArray(R.array.note_accent_colors);
         } else {
-            colors = context.getResources().getIntArray(R.array.note_accent_colors);
+            colors = context.getResources().getIntArray(R.array.note_neutral_colors);
         }
         return colors[((int) (Math.random() * colors.length))];
     }

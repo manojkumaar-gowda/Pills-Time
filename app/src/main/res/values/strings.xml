@@ -161,4 +161,9 @@
     <string name="locate_hospitals_and_pharmacies">Locate Hospitals and Pharmacies</string>
     <string name="upcoming_events">Upcoming Events</string>
     <string name="enter_the_name_of_the_medicine">Enter the name of the medicine</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="height">height</string>
+    <string name="weight">Weight</string>
+    <string name="update_profile">UPDATE DETAILS</string>
 </resources>

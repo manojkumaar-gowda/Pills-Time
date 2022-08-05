@@ -9,9 +9,7 @@
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="10dp"
     app:cardCornerRadius="20dp"
-
     android:id="@+id/upcoming_events"
-
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +43,7 @@
                 android:background="#555252"
                 >
                 <TextView
-                    android:id="@+id/timeRV"
+                    android:id="@+id/timeRV1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -55,7 +53,7 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/roboto_light"/>
                 <TextView
-                    android:id="@+id/dateRV"
+                    android:id="@+id/dateRV1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -65,19 +63,43 @@
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto_thin"/>
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/medsRV"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/left_border_red"
                 android:layout_marginStart="5dp"
-                android:padding="20dp"
-                android:lineSpacingExtra="10sp"
-                android:fontFamily="@font/roboto_light"
-                android:textSize="14sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/takenMedsRV1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:lineSpacingExtra="10sp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textSize="14sp"
+                    android:background="@drawable/left_border_green"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/leftMedsRV1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:lineSpacingExtra="10sp"
+                    android:background="@drawable/left_border_red"
+                    android:fontFamily="@font/roboto_light"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+            </LinearLayout>
+
+
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
