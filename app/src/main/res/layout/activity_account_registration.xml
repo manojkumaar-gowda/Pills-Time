@@ -58,32 +58,56 @@
                 app:layout_constraintTop_toBottomOf="@+id/log_out" />
 
             <!--Account holder name-->
+            <TextView
+                android:id="@+id/nameHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/account_holder"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image"
+                tools:ignore="SmallSp" />
+
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
                 android:autofillHints="Units left"
                 android:background="@drawable/edit_text_border"
-                android:hint="@string/name"
                 android:inputType="text"
                 android:maxLength="10"
                 android:padding="8dp"
                 android:textSize="15sp"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+                app:layout_constraintTop_toBottomOf="@+id/nameHint"
+                tools:ignore="LabelFor" />
 
             <!--Heights-->
+            <TextView
+                android:id="@+id/heightHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/height"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:ignore="SmallSp" />
+
             <LinearLayout
                 android:id="@+id/height_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/name">
+                app:layout_constraintTop_toBottomOf="@+id/heightHint">
 
                 <EditText
                     android:id="@+id/height"
@@ -92,11 +116,11 @@
                     android:layout_weight="4"
                     android:autofillHints="No of doses"
                     android:background="@drawable/edit_text_border"
-                    android:hint="@string/height"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:maxLength="4"
                     android:padding="8dp"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    tools:ignore="LabelFor" />
 
                 <Spinner
                     android:id="@+id/height_units"
@@ -110,28 +134,40 @@
             </LinearLayout>
 
             <!--Weights-->
+            <TextView
+                android:id="@+id/weightHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/weight"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/height_container"
+                tools:ignore="SmallSp" />
+
             <LinearLayout
                 android:id="@+id/weight_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/height_container">
+                app:layout_constraintTop_toBottomOf="@+id/weightHint">
 
                 <EditText
                     android:id="@+id/weight"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:layout_weight="4"
+                    android:layout_weight="6"
                     android:autofillHints="No of doses"
                     android:background="@drawable/edit_text_border"
-                    android:hint="@string/weight"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:maxLength="4"
                     android:padding="8dp"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    tools:ignore="LabelFor" />
 
                 <Spinner
                     android:id="@+id/weight_units"
@@ -145,12 +181,24 @@
             </LinearLayout>
 
             <!--Phone number-->
+            <TextView
+                android:id="@+id/phoneNumberHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/mobile_number"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/weight_container"
+                tools:ignore="SmallSp" />
+
             <EditText
                 android:id="@+id/phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
                 android:autofillHints="Units left"
                 android:background="@drawable/edit_text_border"
@@ -159,51 +207,90 @@
                 android:maxLength="10"
                 android:padding="8dp"
                 android:textSize="15sp"
-                app:layout_constraintTop_toBottomOf="@+id/weight_container" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberHint" />
 
             <!--Date Of Birth-->
             <TextView
+                android:id="@+id/dobHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/date_of_birth"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number"
+                tools:ignore="SmallSp" />
+
+            <EditText
                 android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
+                android:autofillHints="Date of Birth"
                 android:background="@drawable/edit_text_border"
+                android:inputType="text"
                 android:padding="8dp"
-                android:text="@string/date_of_birth"
                 android:textSize="15sp"
                 app:drawableEndCompat="@drawable/date_range"
-                app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+                app:layout_constraintTop_toBottomOf="@+id/dobHint" />
 
             <!--Gender-->
+            <TextView
+                android:id="@+id/genderHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/gender"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/dob"
+                tools:ignore="SmallSp" />
+
             <Spinner
                 android:id="@+id/gender"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/edit_text_border"
                 android:drawableEnd="@drawable/search_icon"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="15sp"
-                app:layout_constraintTop_toBottomOf="@+id/dob" />
+                app:layout_constraintTop_toBottomOf="@+id/genderHint" />
 
             <!--Location-->
             <TextView
+                android:id="@+id/locationHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/location"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/gender"
+                tools:ignore="SmallSp" />
+
+            <EditText
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="25dp"
+                android:autofillHints="Location"
                 android:background="@drawable/edit_text_border"
+                android:inputType="text"
                 android:padding="8dp"
-                android:text="@string/location_hardcoded"
                 android:textSize="15sp"
                 app:drawableEndCompat="@drawable/location_icon"
-                app:layout_constraintTop_toBottomOf="@+id/gender" />
+                app:layout_constraintTop_toBottomOf="@+id/locationHint" />
 
             <!--Terms of services-->
             <LinearLayout
@@ -232,7 +319,7 @@
 
             <!--Create Profile-->
             <Button
-                android:id="@+id/regButton"
+                android:id="@+id/createProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"

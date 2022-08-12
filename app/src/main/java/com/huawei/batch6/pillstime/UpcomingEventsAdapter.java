@@ -36,6 +36,7 @@ public class UpcomingEventsAdapter extends RecyclerView.Adapter<UpcomingEventsAd
         // to set data to the recyclable card view layout
         UpcomingEventsModel model = upcomingEventsModels.get(position);
         holder.time.setText(model.getTime());
+        holder.date.setText(model.getDate());
         holder.meds.setText(model.getMeds());
         //holder.meds.setBackgroundColor(model.getColor());
 
@@ -53,12 +54,14 @@ public class UpcomingEventsAdapter extends RecyclerView.Adapter<UpcomingEventsAd
     public static class Viewholder extends RecyclerView.ViewHolder {
         //Attributes of the Upcoming Events Model
         private final TextView time;
+        private final TextView date;
         private final TextView meds;
         private final CardView color;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.timeRV);
+            date = itemView.findViewById(R.id.dateRV);
             meds = itemView.findViewById(R.id.medsRV);
             color = itemView.findViewById(R.id.upcoming_events);
         }

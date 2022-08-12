@@ -25,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <!--Health progress-->
         <ProgressBar
             android:id="@+id/progressBar"
@@ -77,5 +78,42 @@
             android:scrollbars="vertical"
             app:layout_constraintTop_toBottomOf="@+id/progressBar"
             tools:ignore="InOrMmUsage" />
+
+        <!--Indications-->
+        <LinearLayout
+            android:id="@+id/indications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailed_stat_rv">
+            <!--Green Signal-->
+            <TextView
+                android:id="@+id/success_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/left_border_green"
+                android:fontFamily="@font/roboto_light_italic"
+                android:paddingStart="10dp"
+                android:text="@string/taken_on_time"
+                android:textSize="12sp"
+                tools:ignore="RtlSymmetry" />
+            <!--Green Signal-->
+            <TextView
+                android:id="@+id/danger_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/left_border_red"
+                android:fontFamily="@font/roboto_light_italic"
+                android:paddingStart="10dp"
+                android:text="@string/forgotten_to_take"
+                android:textSize="12sp"
+                tools:ignore="RtlSymmetry" />
+
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

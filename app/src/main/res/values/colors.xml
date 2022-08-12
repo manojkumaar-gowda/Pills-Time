@@ -10,6 +10,7 @@
     <color name="links">#238C9A</color>
     <color name="time_background">#E6E6E6</color>
     <color name="red">#FB0606</color>
+    <color name="warning">#FCBB42</color>
 
 
     <color name="dayPressed">@color/black</color>

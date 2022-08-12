@@ -5,16 +5,17 @@ public class UpcomingEventsModel {
 
     //Model attributes for upcoming events
     private String time;
+    private String date;
     private String meds;
     private int color;
 
     //Constructor for the attributes
-    public UpcomingEventsModel(String time, String meds, int color) {
+    public UpcomingEventsModel(String time, String date, String meds, int color) {
         this.time = time;
+        this.date = date;
         this.meds = meds;
         this.color = color;
     }
-
 
     //Getters and Setters for the attributes
     public int getColor() {
@@ -41,5 +42,11 @@ public class UpcomingEventsModel {
         this.meds = meds;
     }
 
+    public String getDate() {
+        return date;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

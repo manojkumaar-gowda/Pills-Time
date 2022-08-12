@@ -70,7 +70,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="location_hardcoded">38°56’23”N, 71°0’36”W</string>
-    <string name="terms_text">By Signing up, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use</string>
+    <string name="terms_text">By Signing up, you agree to our <font color='#238C9A'>Terms</font> and that you have read our <font color='#238C9A'>Data Use Policy</font>, including our <font color='#238C9A'>Cookie Use</font></string>
     <string name="create_profile">CREATE PROFILE</string>
     <string name="medicine_name_hardcoded">Biocon Prograf</string>
     <string name="dose_details">Dose Details</string>
@@ -80,11 +80,19 @@
     <string name="date_hardcoded">15/08/2022</string>
     <string name="update_profile">UPDATE PROFILE</string>
     <string name="your_bmi_is">Your BMI is</string>
-    <string name="dummy_bmi_value">25.2</string>
-    <string name="dummy_bmi_recommendation">We see that you are over weighed\n We recommend you to lose weight and maintain a healthy diet</string>
+    <string name="danger_bmi_text">We see that you are over weighed\n We recommend you to lose weight and maintain a healthy diet</string>
+    <string name="warning_bmi_text">We see that you are under weighed\n We recommend you to gain weight and maintain a healthy diet</string>
+    <string name="normal_bmi_text">We see that you are in good health\n Keep it up</string>
     <string name="distributor_example_hardcoded">Cipla</string>
     <string name="dash">-</string>
     <string name="medicine_example_hardcoded">Humalog</string>
     <string name="dose_example_hardcoded">0.5 mg</string>
     <string name="pills_left_hardcoded">7\nLeft</string>
+    <string name="account_holder">Account Holder</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="gender">Gender</string>
+    <string name="location">Location</string>
+    <string name="taken_on_time">Taken on time</string>
+    <string name="forgotten_to_take">Forgotten to take</string>
+
 </resources>
