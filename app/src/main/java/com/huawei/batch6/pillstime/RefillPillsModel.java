@@ -1,16 +1,16 @@
 package com.huawei.batch6.pillstime;
 
-import android.graphics.drawable.Drawable;
-
 public class RefillPillsModel {
 
+    //Model attributes for a medicineRefill
     private String pillsLeft;
     private String supplier;
     private String pillName;
     private String dose;
     private int color;
 
-    public RefillPillsModel(String pillsLeft, String supplier, String pillName, String dose,int color) {
+    //Constructor for the attributes
+    public RefillPillsModel(String pillsLeft, String supplier, String pillName, String dose, int color) {
         this.pillsLeft = pillsLeft;
         this.supplier = supplier;
         this.pillName = pillName;
@@ -19,7 +19,7 @@ public class RefillPillsModel {
 
     }
 
-
+    //Getters and Setters for the attributes
     public String getPillsLeft() {
         return pillsLeft;
     }
@@ -54,6 +54,6 @@ public class RefillPillsModel {
 
     public int getColor() { return color; }
 
-    public void setColor(int color) { this.color = color;}
+    public void setColor(int color) { this.color = color; }
 }
 

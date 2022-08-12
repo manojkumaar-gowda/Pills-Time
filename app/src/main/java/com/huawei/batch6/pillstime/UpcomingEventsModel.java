@@ -1,14 +1,22 @@
 package com.huawei.batch6.pillstime;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class UpcomingEventsModel {
+
+    //Model attributes for upcoming events
     private String time;
     private String meds;
     private int color;
 
+    //Constructor for the attributes
+    public UpcomingEventsModel(String time, String meds, int color) {
+        this.time = time;
+        this.meds = meds;
+        this.color = color;
+    }
+
+
+    //Getters and Setters for the attributes
     public int getColor() {
         return color;
     }
@@ -33,9 +41,5 @@ public class UpcomingEventsModel {
         this.meds = meds;
     }
 
-    public UpcomingEventsModel(String time, String meds,int color) {
-        this.time = time;
-        this.meds = meds;
-        this.color = color;
-    }
+
 }

@@ -2,12 +2,24 @@ package com.huawei.batch6.pillstime;
 
 
 public class DetailedStatModel {
+
+    //Model attributes for a Detailed Statistics
     private String time;
     private String date;
     private String takenMeds;
     private String leftMeds;
     private int color;
 
+    //Constructor for the attributes
+    public DetailedStatModel(String time, String date, String takenMeds, String leftMeds, int color) {
+        this.time = time;
+        this.date = date;
+        this.takenMeds = takenMeds;
+        this.leftMeds = leftMeds;
+        this.color = color;
+    }
+
+    //Getters and Setters for the attributes
     public String getTime() {
         return time;
     }
@@ -48,11 +60,5 @@ public class DetailedStatModel {
         this.color = color;
     }
 
-    public DetailedStatModel(String time, String date, String takenMeds, String leftMeds, int color) {
-        this.time = time;
-        this.date = date;
-        this.takenMeds = takenMeds;
-        this.leftMeds = leftMeds;
-        this.color = color;
-    }
+
 }

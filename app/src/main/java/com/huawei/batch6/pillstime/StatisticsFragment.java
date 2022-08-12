@@ -15,24 +15,31 @@ import java.time.LocalDate;
 
 
 public class StatisticsFragment extends Fragment {
-    private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Noc", "Dec"};
-    LocalDate currentDate = LocalDate.now();
-    private int selectedDate = currentDate.getDayOfMonth();
-    private int selectedMonth = currentDate.getMonthValue();
-    private int selectedYear = currentDate.getYear();
-    private String selectedMonthName = months[currentDate.getMonthValue()-1];
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    //Month array
+    private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Noc", "Dec"};
+
+
+    //Selected Date Attributes
+    private LocalDate currentDate;
+    private int selectedDate;
+    private int selectedMonth;
+    private int selectedYear;
+    private String selectedMonthName;
+
+    //detailed statistics
+    TextView detailedSummary;
 
     public StatisticsFragment() {
         // Required empty public constructor
     }
-
 
 
     public static StatisticsFragment newInstance(String param1, String param2) {
@@ -58,8 +65,20 @@ public class StatisticsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_statistics, container, false);
-        TextView detailedSummary = v.findViewById(R.id.detailed_summmary);
+
+        //set date to current date;
+        currentDate = LocalDate.now();
+        selectedDate = currentDate.getDayOfMonth();
+        selectedMonth = currentDate.getMonthValue();
+        selectedYear = currentDate.getYear();
+        selectedMonthName = months[currentDate.getMonthValue() - 1];
+
+        //detailed statistics event handler
+        detailedSummary = v.findViewById(R.id.detailed_summmary);
         detailedSummary.setOnClickListener(view -> detailedSummaryFunction());
+
+
+        //On date change listener for calenderView
         CalendarView calender = v.findViewById(R.id.selectDate);
         calender.setOnDateChangeListener((view, year, month, dateOfMonth) -> {
             selectedDate = dateOfMonth;
@@ -71,6 +90,7 @@ public class StatisticsFragment extends Fragment {
         return v;
     }
 
+    //detailed statistics button functionality
     public void detailedSummaryFunction() {
         Intent send = new Intent(getActivity(), DetailedStatistics.class);
         Bundle bundle = new Bundle();

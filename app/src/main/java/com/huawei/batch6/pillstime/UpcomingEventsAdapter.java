@@ -1,12 +1,9 @@
 package com.huawei.batch6.pillstime;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsAdapter.Viewholder> {
-    private Context context;
-    private ArrayList<UpcomingEventsModel> upcomingEventsModels;
+public class UpcomingEventsAdapter extends RecyclerView.Adapter<UpcomingEventsAdapter.Viewholder> {
+    private final Context context;
+    private final ArrayList<UpcomingEventsModel> upcomingEventsModels;
 
-    // Constructor
+
     public UpcomingEventsAdapter(Context context, ArrayList<UpcomingEventsModel> upcomingEventsModels) {
         this.context = context;
         this.upcomingEventsModels = upcomingEventsModels;
@@ -36,7 +33,7 @@ public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsA
 
     @Override
     public void onBindViewHolder(@NonNull UpcomingEventsAdapter.Viewholder holder, int position) {
-        // to set data to textview and imageview of each card layout
+        // to set data to the recyclable card view layout
         UpcomingEventsModel model = upcomingEventsModels.get(position);
         holder.time.setText(model.getTime());
         holder.meds.setText(model.getMeds());
@@ -53,10 +50,12 @@ public class UpcomingEventsAdapter  extends RecyclerView.Adapter<UpcomingEventsA
 
     // View holder class for initializing of
     // your views such as TextView and Imageview.
-    public class Viewholder extends RecyclerView.ViewHolder {
-        private TextView time;
-        private TextView meds;
-        private CardView color;
+    public static class Viewholder extends RecyclerView.ViewHolder {
+        //Attributes of the Upcoming Events Model
+        private final TextView time;
+        private final TextView meds;
+        private final CardView color;
+
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.timeRV);

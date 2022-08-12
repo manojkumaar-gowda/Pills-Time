@@ -25,6 +25,7 @@
     <color name="dayDeselectedAndDisabledTextColor">@android:color/darker_gray</color>
     <color name="warn">#E99074</color>
 
+    <!--Neutral For recycler view-->
     <array name="note_neutral_colors">
         <item>#FFF8E0</item>
         <item>#D9FFD8</item>
@@ -36,9 +37,14 @@
         <item>#D3ECF6</item>
         <item>#F3F2F2</item>
         <item>#EAE1E1</item>
-
+        <item>#9CC0E7</item>
+        <item>#EEEEEE</item>
+        <item>#FCFCFC</item>
+        <item>#FAEACB</item>
+        <item>#F7DBD7</item>
     </array>
 
+    <!--Accent For recycler view-->
     <array name="note_accent_colors">
         <item>#D8DEFF</item>
         <item>#D8F3FF</item>
@@ -50,5 +56,11 @@
         <item>#FFF8E0</item>
         <item>#D9FFD8</item>
         <item>#EAE1E1</item>
+        <item>#9CC0E7</item>
+        <item>#EEEEEE</item>
+        <item>#FCFCFC</item>
+        <item>#FAEACB</item>
+        <item>#F7DBD7</item>
     </array>
+
 </resources>

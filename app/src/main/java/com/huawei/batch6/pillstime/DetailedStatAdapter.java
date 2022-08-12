@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class DetailedStatAdapter extends RecyclerView.Adapter<DetailedStatAdapter.Viewholder> {
-    private Context context;
-    private ArrayList<DetailedStatModel> detailedStatModels;
 
-    // Constructor
+
+    private final Context context;
+    private final ArrayList<DetailedStatModel> detailedStatModels;
+
+
     public DetailedStatAdapter(Context context, ArrayList<DetailedStatModel> detailedStatModels) {
         this.context = context;
         this.detailedStatModels = detailedStatModels;
@@ -33,7 +35,7 @@ public class DetailedStatAdapter extends RecyclerView.Adapter<DetailedStatAdapte
 
     @Override
     public void onBindViewHolder(@NonNull DetailedStatAdapter.Viewholder holder, int position) {
-        // to set data to textview and imageview of each card layout
+        // to set data to the recyclable card view layout
         DetailedStatModel model = detailedStatModels.get(position);
         holder.time.setText(model.getTime());
         holder.date.setText(model.getDate());
@@ -52,18 +54,20 @@ public class DetailedStatAdapter extends RecyclerView.Adapter<DetailedStatAdapte
 
     // View holder class for initializing of
     // your views such as TextView and Imageview.
-    public class Viewholder extends RecyclerView.ViewHolder {
-        private TextView time;
-        private TextView date;
-        private TextView takenMeds;
-        private TextView leftMeds;
-        private CardView color;
+    public static class Viewholder extends RecyclerView.ViewHolder {
+        //Attributes of the DetailedStatistics Model
+        private final TextView time;
+        private final TextView date;
+        private final TextView takenMeds;
+        private final TextView leftMeds;
+        private final CardView color;
+
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            time = itemView.findViewById(R.id.timeRV1);
-            date = itemView.findViewById(R.id.dateRV1);
-            takenMeds = itemView.findViewById(R.id.takenMedsRV1);
-            leftMeds = itemView.findViewById(R.id.leftMedsRV1);
+            time = itemView.findViewById(R.id.timeRV);
+            date = itemView.findViewById(R.id.dateRV);
+            takenMeds = itemView.findViewById(R.id.takenMedsRV);
+            leftMeds = itemView.findViewById(R.id.leftMedsRV);
             color = itemView.findViewById(R.id.upcoming_events);
         }
     }

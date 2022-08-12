@@ -2,21 +2,21 @@
     <item
         android:id="@+id/Home"
         android:enabled="true"
-        android:icon="@drawable/list_black"
+        android:icon="@drawable/list_icon_black"
         android:title="Home"/>
     <item
         android:id="@+id/Edit"
         android:enabled="true"
-        android:icon="@drawable/edit"
+        android:icon="@drawable/edit_icon"
         android:title="Edit"/>
     <item
         android:id="@+id/Statistics"
         android:enabled="true"
-        android:icon="@drawable/statistics"
+        android:icon="@drawable/statistics_icon"
         android:title="Statistics"/>
     <item
         android:id="@+id/Profile"
         android:enabled="true"
-        android:icon="@drawable/user"
+        android:icon="@drawable/user_icon"
         android:title="Profile"/>
 </menu>

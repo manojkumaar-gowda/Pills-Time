@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.28489583333333335" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/add_medication.xml" value="0.15677083333333333" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/drawable/circular_progress_bar.xml" value="0.2546875" />
@@ -53,22 +54,52 @@
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.253125" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/mipmap-anydpi-v26/pills_time_app_icon.xml" value="0.2703125" />
         <entry key="..\:/Users/manoj/AndroidStudioProjects/Pills-Time/app/src/main/res/mipmap-anydpi-v26/pills_time_app_icon_round.xml" value="0.1375" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable-v24/img.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/add_medication.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.362962962962963" />
         <entry key="app/src/main/res/drawable/circular_shape.xml" value="0.362962962962963" />
+        <entry key="app/src/main/res/drawable/clock.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/dashboard_layout_bg.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/delete.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/edit.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/edit_text_border.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/edit_text_circular_border.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/left_border_green.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/left_border_red.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/list_black.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/location.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/meds_circular_background.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/notification_icon.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/ripple_effect.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/search.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/statistics.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/switch_thumb.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/switch_track.xml" value="0.21041666666666667" />
+        <entry key="app/src/main/res/drawable/user.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/layout/activity_account_registration.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_dose.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_new_medication.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/activity_detailed_statistics.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19791666666666666" />
-        <entry key="app/src/main/res/layout/detailed_stat_events_layout.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/add_time_layout.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/detailed_stat_events_layout.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/refill_meds_layout.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/meds_layout.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/refill_meds_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.33469202898550726" />
         <entry key="app/src/main/res/layout/upcoming_events_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3265625" />
       </map>
     </option>
   </component>

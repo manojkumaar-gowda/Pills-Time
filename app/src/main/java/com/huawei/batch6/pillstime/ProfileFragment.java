@@ -2,64 +2,45 @@ package com.huawei.batch6.pillstime;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.text.DateFormat;
+import androidx.fragment.app.Fragment;
+
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ProfileFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class ProfileFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-
-    String[] heights = { "cm", "m", "feet"};
-
-    String[] weights = { "kg", "pound"};
-
-    String[] gender = { "Male", "Female", "Prefer not to say"};
-
-
-    TextView pickDate;
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    //Spinner Options
+    private final String[] heights = {"cm", "m", "feet"};
+    private final String[] weights = {"kg", "pound"};
+    private final String[] gender = {"Male", "Female", "Prefer not to say"};
+
+    //Date Picker
+    private TextView pickDate;
+
+    //Spinners
+    private Spinner height_spinner;
+    private Spinner weight_spinner;
+    private Spinner gender_spinner;
 
 
     public ProfileFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
@@ -81,48 +62,40 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
 
+        //Set heights for spinner
+        height_spinner = v.findViewById(R.id.height_units);
+        ArrayAdapter heightArrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, heights);
+        heightArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        height_spinner.setAdapter(heightArrayAdapter);
 
-//heights
-        Spinner height_spino = v.findViewById(R.id.height_units);
-        ArrayAdapter ad
-                = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, heights);
-        ad.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        height_spino.setAdapter(ad);
+        //Set weights for spinner
+        weight_spinner = v.findViewById(R.id.weight_units);
+        ArrayAdapter weightArrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, weights);
+        weightArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weight_spinner.setAdapter(weightArrayAdapter);
 
-//weight
-        Spinner weight_spino = v.findViewById(R.id.weight_units);
-        ArrayAdapter ad1
-                = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, weights);
-        ad1.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        weight_spino.setAdapter(ad1);
-
-//gender
-        Spinner gender_spino = v.findViewById(R.id.gender);
-        ArrayAdapter ad2
-                = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, gender);
-        ad2.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        gender_spino.setAdapter(ad2);
+        //Set gender for spinner
+        gender_spinner = v.findViewById(R.id.gender);
+        ArrayAdapter genderArrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, gender);
+        genderArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gender_spinner.setAdapter(genderArrayAdapter);
 
 
-//datePicker
+        //datePicker
+        //Button click event handler
         pickDate = v.findViewById(R.id.dob);
-        //set listener on button click
         pickDate.setOnClickListener(view -> showDatePickerDialog());
 
         return v;
     }
 
-    private void showDatePickerDialog(){
+    //Date Picker functionality
+    private void showDatePickerDialog() {
         //create a new DatePickerDialog object and set the default selected date to present dat
         DatePickerDialog datePicker = new DatePickerDialog(
                 getActivity(),
@@ -135,10 +108,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         datePicker.show();
     }
 
+    //Set date to the input field functionality
     @Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int date){
+    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
         //set the date
-        String text = date+"/"+(month+1)+"/"+year;
+        String text = date + "/" + (month + 1) + "/" + year;
         pickDate.setText(text);
     }
 

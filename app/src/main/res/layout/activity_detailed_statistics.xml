@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:context=".DetailedStatistics"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".DetailedStatistics">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/white">
+
         <!--Back-->
         <TextView
             android:id="@+id/back"
@@ -24,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Health progress-->
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -39,6 +41,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/back" />
 
+        <!--Date-->
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
@@ -52,6 +55,7 @@
             app:layout_constraintTop_toBottomOf="@id/back"
             tools:ignore="HardcodedText" />
 
+        <!--progress percentage-->
         <TextView
             android:id="@+id/progress_percentage"
             android:layout_width="wrap_content"
@@ -64,16 +68,14 @@
             app:layout_constraintTop_toBottomOf="@id/back"
             tools:ignore="HardcodedText" />
 
+        <!--detailed statistics recycler view-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detailed_stat_rv"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="3in"
+            android:layout_marginTop="10dp"
+            android:scrollbars="vertical"
             app:layout_constraintTop_toBottomOf="@+id/progressBar"
-            android:scrollbars="vertical" />
-
+            tools:ignore="InOrMmUsage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </ScrollView>

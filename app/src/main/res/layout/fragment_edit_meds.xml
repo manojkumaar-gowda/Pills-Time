@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EditMedsFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".EditMedsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <!--Temporary-->
+        android:layout_height="match_parent">
+
+        <!--Temporary for next page-->
         <TextView
             android:id="@+id/next"
-            android:background="@drawable/ripple_effect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
             android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/ripple_effect"
             android:text="@string/next"
             android:textColor="@color/links"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Search bar-->
         <EditText
             android:id="@+id/search"
             android:layout_width="match_parent"
@@ -34,15 +35,12 @@
             android:layout_marginRight="25dp"
             android:autofillHints=""
             android:background="@drawable/edit_text_circular_border"
-            android:drawableEnd="@drawable/search"
+            android:drawableEnd="@drawable/search_icon"
             android:hint="@string/enter_the_name_of_the_medicine"
             android:inputType="text"
             android:padding="10dp"
             android:textSize="15sp"
             app:layout_constraintTop_toTopOf="parent" />
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

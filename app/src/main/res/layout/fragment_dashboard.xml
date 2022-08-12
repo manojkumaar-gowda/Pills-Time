@@ -13,7 +13,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#F3F2F2"
             tools:context=".MainActivity">
 
@@ -25,7 +25,7 @@
                 android:background="@drawable/dashboard_layout_bg"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
+                <!--Hello text-->
                 <TextView
                     android:id="@+id/Hello"
                     android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
+                <!--User Name-->
                 <TextView
                     android:id="@+id/Name"
                     android:layout_width="wrap_content"
@@ -49,8 +49,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Hello" />
 
+                <!--Greeting Message-->
                 <TextView
-                    android:id="@+id/msg"
+                    android:id="@+id/greeting_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
@@ -60,19 +61,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Name" />
 
+                <!--Medicines to recycle container-->
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/meds_to_recycle_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/msg">
+                    app:layout_constraintTop_toBottomOf="@+id/greeting_msg">
 
+                    <!--Meds to recycle-->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/pillsLeftRV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scrollbars="horizontal" />
 
+                    <!--Link to locate hospital and pharmacy-->
                     <TextView
                         android:id="@+id/locate_hospitals_and_pharmacy"
                         android:layout_width="match_parent"
@@ -89,15 +94,16 @@
                         app:layout_constraintTop_toBottomOf="@id/progressBar" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-
+                <!--No refill reminders -->
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/no_refill_reminders_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/msg">
-
+                    app:layout_constraintTop_toBottomOf="@id/greeting_msg">
+                    <!--No refill reminders image-->
                     <ImageView
                         android:id="@+id/noRemindersImage"
                         android:layout_width="289dp"
@@ -110,6 +116,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <!--No refill reminders text-->
                     <TextView
                         android:id="@+id/noReminders"
                         android:layout_width="wrap_content"
@@ -125,39 +132,42 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--Upcoming events container-->
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upcoming_events_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#F3F2F2"
                 app:layout_constraintTop_toBottomOf="@+id/top">
-
+                <!--Upcoming events text-->
                 <TextView
                     android:id="@+id/upcoming_events_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/roboto_black"
                     android:text="@string/upcoming_events"
-                    android:textSize="18sp"
 
-                    android:layout_marginLeft="25dp"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
+                <!--Upcoming events recycler view-->
                 <androidx.recyclerview.widget.RecyclerView
-                    app:layout_constraintTop_toBottomOf="@+id/upcoming_events_text"
                     android:id="@+id/medsCardView"
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scrollbars="horizontal" />
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/upcoming_events_text" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <!--Floating action Bar-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -167,7 +177,7 @@
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/black"
         android:contentDescription="@string/add_medication"
-        android:src="@drawable/add_medication"
+        android:src="@drawable/plus_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

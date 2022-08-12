@@ -1,25 +1,29 @@
 package com.huawei.batch6.pillstime;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-//import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+//import android.widget.EditText;
+
 public class MedicalSuggestions extends AppCompatActivity {
+
+    //Back Button
+    private TextView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_suggestions);
-        TextView backButton = findViewById(R.id.back);
-        backButton.setOnClickListener(view -> exitFunction());
-       // EditText search = findViewById(R.id.search);
 
-
+        //Back Button Event handling
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> backFunction());
     }
-    public void exitFunction(){
+
+    //Back Functionality
+    public void backFunction() {
         finish();
     }
 

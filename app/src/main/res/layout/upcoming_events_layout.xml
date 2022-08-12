@@ -1,80 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upcoming_events"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="10dp"
-    app:cardCornerRadius="20dp"
-
-    android:id="@+id/upcoming_events"
-
-    >
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/turnOnOffNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:visibility="gone"
-            android:thumb="@drawable/switch_thumb"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:track="@drawable/switch_track"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
+        <!-- Upcoming events container-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/turnOnOffNotification">
-
+            app:layout_constraintTop_toTopOf="parent">
+            <!--Left part - Upcoming events container-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:background="#555252"
-                >
+                android:orientation="vertical">
+                <!--Time-->
                 <TextView
                     android:id="@+id/timeRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto_light"
                     android:padding="20dp"
-                    android:text="8.00 AM"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/roboto_light"/>
+                    android:text="@string/time_hardcoded"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+                <!--Date-->
                 <TextView
                     android:id="@+id/dateRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto_thin"
                     android:padding="20dp"
-                    android:text="15/08/2022"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto_thin"/>
+                    android:text="@string/date_hardcoded"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </LinearLayout>
-
+            <!--Right part - Upcoming events container - Medicines to be taken-->
             <TextView
                 android:id="@+id/medsRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/left_border_red"
                 android:layout_marginStart="5dp"
-                android:padding="20dp"
-                android:lineSpacingExtra="10sp"
+                android:background="@drawable/left_border_red"
                 android:fontFamily="@font/roboto_light"
+                android:lineSpacingExtra="10sp"
+                android:padding="20dp"
                 android:textSize="14sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -1,7 +1,5 @@
 package com.huawei.batch6.pillstime;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,78 +8,86 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
 
-public class AccountRegistration extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
-
-    String[] heights = { "cm", "m", "feet"};
-
-    String[] weights = { "kg", "pound"};
-
-    String[] gender = { "Male", "Female", "Prefer not to say"};
+public class AccountRegistration extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
 
-    TextView pickDate;
+    //Spinner Options
+    private final String[] heights = {"cm", "m", "feet"};
+    private final String[] weights = {"kg", "pound"};
+    private final String[] gender = {"Male", "Female", "Prefer not to say"};
+
+    //Date Pickers
+    private TextView pickDate;
+    //Logout
+    private TextView logoutButton;
+    //Temporary way to dashboard
+    private TextView accButton;
+
+    //Spinners
+    private Spinner height_spinner;
+    private Spinner weight_spinner;
+    private Spinner gender_spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_registration);
 
-        TextView logoutButton = findViewById(R.id.log_out);
+        //Logout event handling
+        logoutButton = findViewById(R.id.log_out);
         logoutButton.setOnClickListener(view -> logoutFunction());
 
-        TextView accButton = findViewById(R.id.dash);
+        //Temporary way to dashboard
+        accButton = findViewById(R.id.dash);
         accButton.setOnClickListener(view -> accFunction());
 
 
+        //Set heights for spinner
+        height_spinner = findViewById(R.id.height_units);
+        ArrayAdapter heightArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, heights);
+        heightArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        height_spinner.setAdapter(heightArrayAdapter);
 
-//heights
-        Spinner height_spino = findViewById(R.id.height_units);
-        ArrayAdapter ad
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, heights);
-        ad.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        height_spino.setAdapter(ad);
+        //Set weights for spinner
+        weight_spinner = findViewById(R.id.weight_units);
+        ArrayAdapter weightArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, weights);
+        weightArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weight_spinner.setAdapter(weightArrayAdapter);
 
-//weight
-        Spinner weight_spino = findViewById(R.id.weight_units);
-        ArrayAdapter ad1
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, weights);
-        ad1.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        weight_spino.setAdapter(ad1);
-
-//gender
-        Spinner gender_spino = findViewById(R.id.gender);
-        ArrayAdapter ad2
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, gender);
-        ad2.setDropDownViewResource(
-                android.R.layout
-                        .simple_spinner_dropdown_item);
-        gender_spino.setAdapter(ad2);
+        //Set gender for spinner
+        gender_spinner = findViewById(R.id.gender);
+        ArrayAdapter genderArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, gender);
+        genderArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gender_spinner.setAdapter(genderArrayAdapter);
 
 
-//datePicker
+        //datePicker
+        //Button click event handler
         pickDate = findViewById(R.id.dob);
-        //set listener on button click
         pickDate.setOnClickListener(view -> showDatePickerDialog());
 
     }
 
-    public void logoutFunction(){
+    //Logout functionality
+    public void logoutFunction() {
         finish();
 
     }
 
-    public void accFunction(){
-        Intent send = new Intent(AccountRegistration.this,MainActivity.class);
+    //Temporary door to dashboard functionality
+    public void accFunction() {
+        Intent send = new Intent(AccountRegistration.this, MainActivity.class);
         startActivity(send);
     }
 
-    private void showDatePickerDialog(){
+
+    //Date Picker functionality
+    private void showDatePickerDialog() {
         //create a new DatePickerDialog object and set the default selected date to present dat
         DatePickerDialog datePicker = new DatePickerDialog(
                 this,
@@ -94,10 +100,11 @@ public class AccountRegistration extends AppCompatActivity implements DatePicker
         datePicker.show();
     }
 
+    //Set date to the input field functionality
     @Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int date){
+    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
         //set the date
-        String text = date+"/"+(month+1)+"/"+year;
+        String text = date + "/" + (month + 1) + "/" + year;
         pickDate.setText(text);
     }
 }

@@ -1,22 +1,22 @@
 package com.huawei.batch6.pillstime;
+
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
-    public class RefillPillsAdapter extends RecyclerView.Adapter<RefillPillsAdapter.Viewholder> {
+public class RefillPillsAdapter extends RecyclerView.Adapter<RefillPillsAdapter.Viewholder> {
 
-        private Context context;
-        private ArrayList<RefillPillsModel> refillModelArrayList;
+        private final Context context;
+        private final ArrayList<RefillPillsModel> refillModelArrayList;
 
-        // Constructor
         public RefillPillsAdapter(Context context, ArrayList<RefillPillsModel> refillModelArrayList) {
             this.context = context;
             this.refillModelArrayList = refillModelArrayList;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
         @Override
         public void onBindViewHolder(@NonNull RefillPillsAdapter.Viewholder holder, int position) {
-            // to set data to textview and imageview of each card layout
+            // to set data to the recyclable card view layout
             RefillPillsModel model = refillModelArrayList.get(position);
             holder.pillsLeft.setText(model.getPillsLeft());
             holder.supplier.setText(model.getSupplier());
@@ -50,13 +50,18 @@ import java.util.ArrayList;
 
         // View holder class for initializing of
         // your views such as TextView and Imageview.
-        public class Viewholder extends RecyclerView.ViewHolder {
-            private TextView pillsLeft, supplier,pillName,dose;
-            private CardView color;
+        public static class Viewholder extends RecyclerView.ViewHolder {
+
+            //Attributes of the DetailedStatistics Model
+            private final TextView pillsLeft;
+            private final TextView supplier;
+            private final TextView pillName;
+            private final TextView dose;
+            private final CardView color;
             public Viewholder(@NonNull View itemView) {
                 super(itemView);
                 pillsLeft = itemView.findViewById(R.id.pillsLeft);
-                supplier = itemView.findViewById(R.id.brand);
+                supplier = itemView.findViewById(R.id.distributor);
                 pillName = itemView.findViewById(R.id.medicineName);
                 dose = itemView.findViewById(R.id.dose);
                 color = itemView.findViewById(R.id.pillsLeftContainer);

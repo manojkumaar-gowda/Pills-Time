@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:id="@+id/medsContainer"
-
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--Meds container-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="5dp">
-        <TextView
-            android:id="@+id/brandInRV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cipla"
-            android:textSize="11sp"
-            />
-        <TextView
 
+        <!--distributor-->
+        <TextView
+            android:id="@+id/distributorInRV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="11sp"
-            />
+            android:text="@string/distributor_example_hardcoded"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dash"
+            android:textSize="11sp" />
+
+        <!--Medicine-->
         <TextView
             android:id="@+id/medInRV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humalog"
-            android:textSize="15sp"
-            />
+            android:text="@string/medicine_example_hardcoded"
+            android:textSize="15sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="11sp"
-            />
+            android:text="@string/dash"
+            android:textSize="11sp" />
+
+        <!--Dose-->
         <TextView
             android:id="@+id/doseInRV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0.5 mg"
-            android:textSize="15sp"
-            />
+            android:text="@string/dose_example_hardcoded"
+            android:textSize="15sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

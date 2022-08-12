@@ -8,33 +8,49 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddNewMedication extends AppCompatActivity {
 
+
+    //Back Button
+    private TextView backButton;
+
+    //Next Button
+    private TextView nextButton;
+
+    //Medical Suggestions
+    private TextView medicalSuggestion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_medication);
 
-        TextView backButton = findViewById(R.id.back);
+        //back button event handling
+        backButton = findViewById(R.id.back);
         backButton.setOnClickListener(view -> backFunction());
 
-        TextView nextButton = findViewById(R.id.next);
+        //next button event handling
+        nextButton = findViewById(R.id.next);
         nextButton.setOnClickListener(view -> nextFunction());
 
-        TextView medicalSuggestion = findViewById(R.id.medicalSuggestions);
-        medicalSuggestion.setOnClickListener(view -> medFunction());
+        //medicalSuggestions button event handling
+        medicalSuggestion = findViewById(R.id.medicalSuggestions);
+        medicalSuggestion.setOnClickListener(view -> medicalSuggestionFunctionality());
 
     }
 
-    public void backFunction(){
+    //Back Button Functionality
+    public void backFunction() {
         finish();
     }
 
-    public void nextFunction(){
-        Intent send = new Intent(AddNewMedication.this,AddDose.class);
+    //Next Button Functionality
+    public void nextFunction() {
+        Intent send = new Intent(AddNewMedication.this, AddDose.class);
         startActivity(send);
     }
 
-    public void medFunction(){
-        Intent send = new Intent(AddNewMedication.this,MedicalSuggestions.class);
+    //Medical Suggestions Button Functionality
+    public void medicalSuggestionFunctionality() {
+        Intent send = new Intent(AddNewMedication.this, MedicalSuggestions.class);
         startActivity(send);
     }
 }
