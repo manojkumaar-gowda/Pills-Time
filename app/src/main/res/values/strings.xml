@@ -94,5 +94,10 @@
     <string name="location">Location</string>
     <string name="taken_on_time">Taken on time</string>
     <string name="forgotten_to_take">Forgotten to take</string>
+    <string name="dose_advised">Dose advised</string>
+    <string name="select_the_type_of_date">Select the type of date</string>
+    <string name="dummy_medicine_name_for_RV">Cipla Prograf - 1.0 mg</string>
+    <string name="dummy_instructions_for_RV">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</string>
+    <string name="dummy_will_ring_at">SUN,MON,TUE @ 8.00AM</string>
 
 </resources>

@@ -3,14 +3,20 @@ package com.huawei.batch6.pillstime;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class DetailedStatistics extends AppCompatActivity {
+
+    //pull to refresh
+    private SwipeRefreshLayout pullToRefresh;
 
     // Back
     private TextView backButton;
@@ -19,10 +25,38 @@ public class DetailedStatistics extends AppCompatActivity {
     private TextView progress_percentage;
 
 
+    //progress
+    private int progress;
+    private String selectedDate;
+    private String selectedMonth;
+    private String selectedYear;
+    private String fullDate;
+
+    //Month array
+    private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Noc", "Dec"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_statistics);
+
+        //pull to refresh functionality
+        pullToRefresh = findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+                pullToRefresh.setRefreshing(false);
+            }
+
+            private void refresh() {
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+            }
+        });
+
 
         //back button event handling
         backButton = findViewById(R.id.back);
@@ -36,11 +70,16 @@ public class DetailedStatistics extends AppCompatActivity {
 
         //Extract date content from the previous activity
         Bundle bundle = getIntent().getExtras();
-        String fullDate = bundle.getString("monthName") + ",\n" + bundle.getString("date") + " " + bundle.getString("year");
-        String progress = bundle.getString("progress", "0");
+        selectedDate = bundle.getString("date");
+        selectedMonth = bundle.getString("monthName");
+        selectedYear = bundle.getString("year");
+
+
+        fullDate = selectedMonth + ",\n" + selectedDate + " " + selectedYear;
+        progress = Integer.parseInt(bundle.getString("progress", "0"));
 
         //set values for the progress
-        progressBar.setProgress(Integer.parseInt(progress));
+        progressBar.setProgress(progress);
         date.setText(fullDate);
         String progressWithPercentage = progress + "%";
         progress_percentage.setText(progressWithPercentage);
@@ -50,6 +89,15 @@ public class DetailedStatistics extends AppCompatActivity {
 
 
     }
+
+    //change percentage and progress according to the date
+    private void changePercentage(View v) {
+        progress_percentage = v.findViewById(R.id.progress_percentage);
+        progressBar = v.findViewById(R.id.progressBar);
+        progress_percentage.setText(String.valueOf(selectedDate) + "%");
+        progressBar.setProgress(Integer.parseInt(selectedDate));
+    }
+
 
     //create detailed statistics recyclable view
     private void setDetailedStatistics(String fullDate) {

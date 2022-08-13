@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +27,8 @@ import java.util.Locale;
 
 public class AccountRegistration extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
+    //pull to refresh
+    private SwipeRefreshLayout pullToRefresh;
 
     //Spinner Options
     private final String[] heights = {"Select Unit", "cm", "m"};
@@ -75,6 +78,25 @@ public class AccountRegistration extends AppCompatActivity implements DatePicker
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_registration);
+
+        //pull to refresh functionality
+        pullToRefresh = findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+                pullToRefresh.setRefreshing(false);
+            }
+
+            private void refresh() {
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+            }
+        });
+
+
 
         //setUserDetails from huawei login
         UserphNumber = "6383664520";

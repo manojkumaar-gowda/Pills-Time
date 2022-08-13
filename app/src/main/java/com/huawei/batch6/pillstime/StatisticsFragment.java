@@ -4,17 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 
 
 public class StatisticsFragment extends Fragment {
+
+    //pull to refresh
+    private SwipeRefreshLayout pullToRefresh;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -22,6 +28,10 @@ public class StatisticsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //Percentage
+    private TextView percentageText;
+    //progress bar
+    private ProgressBar progressBar;
 
     //Month array
     private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Noc", "Dec"};
@@ -66,12 +76,29 @@ public class StatisticsFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_statistics, container, false);
 
+        //pull to refresh functionality
+        pullToRefresh = v.findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+                pullToRefresh.setRefreshing(false);
+            }
+
+            private void refresh() {
+                Toast.makeText(getContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //set date to current date;
         currentDate = LocalDate.now();
         selectedDate = currentDate.getDayOfMonth();
         selectedMonth = currentDate.getMonthValue();
         selectedYear = currentDate.getYear();
         selectedMonthName = months[currentDate.getMonthValue() - 1];
+
+        //set progress of that particular date
+        changePercentage(v);
 
         //detailed statistics event handler
         detailedSummary = v.findViewById(R.id.detailed_summmary);
@@ -85,9 +112,17 @@ public class StatisticsFragment extends Fragment {
             selectedMonth = month + 1;
             selectedMonthName = months[month];
             selectedYear = year;
-            //Toast.makeText(getApplicationContext(), String.valueOf(selectedYear), Toast.LENGTH_SHORT).show();
+            changePercentage(v);
         });
         return v;
+    }
+
+    //change percentage and progress according to the date
+    private void changePercentage(View v) {
+        percentageText = v.findViewById(R.id.progress_percentage);
+        progressBar = v.findViewById(R.id.progressBar);
+        percentageText.setText(String.valueOf(selectedDate) + "%");
+        progressBar.setProgress(selectedDate);
     }
 
     //detailed statistics button functionality
@@ -98,7 +133,7 @@ public class StatisticsFragment extends Fragment {
         bundle.putString("month", String.valueOf(selectedMonth));
         bundle.putString("monthName", String.valueOf(selectedMonthName));
         bundle.putString("year", String.valueOf(selectedYear));
-        bundle.putString("progress", "80");
+        bundle.putString("progress", String.valueOf(selectedDate));
         send.putExtras(bundle);
         startActivity(send);
 

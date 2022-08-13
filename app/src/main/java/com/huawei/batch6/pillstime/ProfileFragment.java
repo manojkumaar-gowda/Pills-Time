@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -26,6 +27,9 @@ import java.util.Locale;
 
 
 public class ProfileFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+
+    //pull to refresh
+    private SwipeRefreshLayout pullToRefresh;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -122,8 +126,24 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        //pull to refresh functionality
+        pullToRefresh = v.findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+                pullToRefresh.setRefreshing(false);
+            }
+
+            private void refresh() {
+                Toast.makeText(getContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         //Logout event handling
         logoutButton = v.findViewById(R.id.log_out);
@@ -155,6 +175,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
         return v;
     }
+
 
     //BMI calculator
     private Double BMICalculator() {
@@ -287,7 +308,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     noVaidationErrors = false;
                 }
             }//for pounds weight should be < maxWeightForPound
-            else if (weightUnitValue.equals("pound")){
+            else if (weightUnitValue.equals("pound")) {
                 if (Double.valueOf(weightValue) > maxWeightForPound) {
                     weight.setError("Range out of limit");
                     noVaidationErrors = false;

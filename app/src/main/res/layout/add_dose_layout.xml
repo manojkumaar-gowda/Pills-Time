@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_bottom_border"
+    android:orientation="horizontal"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <!--Delete button-->
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/deletetime"
+        android:nextFocusLeft="@id/timeView"
+        android:src="@drawable/delete_icon"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--Med details-->
+    <TextView
+        android:id="@+id/medNameWithDistributorAndDose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/dummy_medicine_name_for_RV"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Instructions-->
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/roboto_light_italic"
+        android:padding="5dp"
+        android:text="@string/dummy_instructions_for_RV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medNameWithDistributorAndDose" />
+
+    <!--Instructions-->
+    <TextView
+        android:id="@+id/willRingAt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:text="@string/dummy_will_ring_at"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

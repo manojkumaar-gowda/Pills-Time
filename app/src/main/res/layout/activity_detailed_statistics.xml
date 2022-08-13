@@ -1,119 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailedStatistics">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/white">
-
-        <!--Back-->
-        <TextView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ripple_effect"
-            android:text="@string/back"
-            android:textColor="@color/links"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <!--Health progress-->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/circular_shape"
-            android:indeterminate="false"
-            android:max="100"
-            android:progressDrawable="@drawable/circular_progress_bar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back" />
-
-        <!--Date-->
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:fontFamily="@font/roboto_light_italic"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back"
-            tools:ignore="HardcodedText" />
-
-        <!--progress percentage-->
-        <TextView
-            android:id="@+id/progress_percentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
-            android:fontFamily="@font/roboto_light_italic"
-            android:textSize="30sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back"
-            tools:ignore="HardcodedText" />
-
-        <!--detailed statistics recycler view-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/detailed_stat_rv"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="3in"
-            android:layout_marginTop="10dp"
-            android:scrollbars="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar"
-            tools:ignore="InOrMmUsage" />
+            android:layout_height="wrap_content">
 
-        <!--Indications-->
-        <LinearLayout
-            android:id="@+id/indications"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:orientation="vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailed_stat_rv">
-            <!--Green Signal-->
+            <!--Back-->
             <TextView
-                android:id="@+id/success_indicator"
+                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/left_border_green"
-                android:fontFamily="@font/roboto_light_italic"
-                android:paddingStart="10dp"
-                android:text="@string/taken_on_time"
-                android:textSize="12sp"
-                tools:ignore="RtlSymmetry" />
-            <!--Green Signal-->
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/ripple_effect"
+                android:text="@string/back"
+                android:textColor="@color/links"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--Health progress-->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/circular_shape"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back" />
+
+            <!--Date-->
             <TextView
-                android:id="@+id/danger_indicator"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/left_border_red"
+                android:layout_marginTop="75dp"
                 android:fontFamily="@font/roboto_light_italic"
-                android:paddingStart="10dp"
-                android:text="@string/forgotten_to_take"
-                android:textSize="12sp"
-                tools:ignore="RtlSymmetry" />
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back"
+                tools:ignore="HardcodedText" />
+
+            <!--progress percentage-->
+            <TextView
+                android:id="@+id/progress_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:fontFamily="@font/roboto_light_italic"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back"
+                tools:ignore="HardcodedText" />
+
+            <!--detailed statistics recycler view-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detailed_stat_rv"
+                android:layout_width="match_parent"
+                android:layout_height="3in"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                tools:ignore="InOrMmUsage" />
+
+            <!--Indications-->
+            <LinearLayout
+                android:id="@+id/indications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_stat_rv">
+                <!--Green Signal-->
+                <TextView
+                    android:id="@+id/success_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_border_green"
+                    android:fontFamily="@font/roboto_light_italic"
+                    android:paddingStart="10dp"
+                    android:text="@string/taken_on_time"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry" />
+                <!--Green Signal-->
+                <TextView
+                    android:id="@+id/danger_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_border_red"
+                    android:fontFamily="@font/roboto_light_italic"
+                    android:paddingStart="10dp"
+                    android:text="@string/forgotten_to_take"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry" />
 
 
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

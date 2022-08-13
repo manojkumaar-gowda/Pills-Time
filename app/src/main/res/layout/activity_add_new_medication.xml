@@ -49,74 +49,126 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--name of the medication-->
+    <TextView
+        android:id="@+id/nameOfTheMedicationHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/name_of_the_medication"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:ignore="SmallSp" />
+
     <EditText
         android:id="@+id/name_of_the_medication"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="25dp"
         android:autofillHints="Name"
         android:background="@drawable/edit_text_border"
-        android:hint="@string/name_of_the_medication"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/nameOfTheMedicationHint"
+        tools:ignore="LabelFor" />
 
-    <EditText
-        android:id="@+id/brand"
+    <!--Distributor-->
+    <TextView
+        android:id="@+id/distributorHint"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="25dp"
+        android:text="@string/distributor"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/name_of_the_medication"
+        tools:ignore="SmallSp" />
+
+    <EditText
+        android:id="@+id/distributor"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="25dp"
         android:autofillHints="Distributor"
         android:background="@drawable/edit_text_border"
-        android:hint="@string/distributor"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_of_the_medication" />
+        app:layout_constraintTop_toBottomOf="@+id/distributorHint"
+        tools:ignore="LabelFor" />
+
+
+    <!--Medical History-->
+    <TextView
+        android:id="@+id/medicalHistoryHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/medical_history"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/distributor"
+        tools:ignore="SmallSp" />
 
     <EditText
-        android:id="@+id/MedicalHistory"
+        android:id="@+id/medicalHistory"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="25dp"
         android:autofillHints="Medical History"
         android:background="@drawable/edit_text_border"
         android:gravity="top"
-        android:hint="@string/medical_history"
         android:inputType="textMultiLine"
         android:padding="8dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brand" />
+        app:layout_constraintTop_toBottomOf="@+id/medicalHistoryHint"
+        tools:ignore="LabelFor" />
 
-    <EditText
-        android:id="@+id/RecommendBy"
+    <!--Recommended By-->
+    <TextView
+        android:id="@+id/recommendedByHint"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="25dp"
+        android:text="@string/recommended_doctor"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/medicalHistory"
+        tools:ignore="SmallSp" />
+
+    <EditText
+        android:id="@+id/recommendedBy"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="25dp"
         android:autofillHints="Recommended Doctor"
         android:background="@drawable/edit_text_border"
-        android:hint="@string/recommended_doctor"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MedicalHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/recommendedByHint"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/scan_and_fetch_details_button"
@@ -132,7 +184,7 @@
         android:textColor="@color/white"
         android:textFontWeight="700"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@+id/RecommendBy" />
+        app:layout_constraintTop_toBottomOf="@+id/recommendedBy" />
 
     <TextView
         android:id="@+id/relax_text_under_button"
@@ -151,7 +203,7 @@
         android:id="@+id/medicalSuggestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/ripple_effect"
         android:text="@string/medical_suggestions"
         android:textColor="@color/links"

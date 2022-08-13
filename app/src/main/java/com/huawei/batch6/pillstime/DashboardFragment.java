@@ -6,8 +6,11 @@ import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +29,8 @@ import java.util.Locale;
 
 
 public class DashboardFragment extends Fragment {
+
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -88,6 +93,7 @@ public class DashboardFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
 
+
         //Locate hospitals and pharmacies
         locateHospitalsAndPharmacies = v.findViewById(R.id.locate_hospitals_and_pharmacy);
         //Locate hospitals and pharmacies event handling
@@ -115,7 +121,7 @@ public class DashboardFragment extends Fragment {
     }
 
     private void setUserDetails() {
-        accountHolderName = "Michella";
+        accountHolderName = "MØ";
     }
 
     //Locate hospitals and pharmacies Functionality

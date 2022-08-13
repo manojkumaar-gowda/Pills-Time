@@ -62,8 +62,10 @@
         <entry key="app/src/main/res/drawable/clock.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/dashboard_layout_bg.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/delete.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/dotted.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/edit.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/edit_text_border.xml" value="0.2859375" />
+        <entry key="app/src/main/res/drawable/edit_text_border_topBottom.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/drawable/edit_text_circular_border.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/home.xml" value="0.2859375" />
         <entry key="app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2859375" />
@@ -82,19 +84,21 @@
         <entry key="app/src/main/res/drawable/statistics.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/switch_thumb.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/switch_track.xml" value="0.21041666666666667" />
+        <entry key="app/src/main/res/drawable/top_bottom_border.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/user.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/layout/activity_account_registration.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_add_dose.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_add_new_medication.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/activity_add_dose.xml" value="0.3198992443324937" />
+        <entry key="app/src/main/res/layout/activity_add_new_medication.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_detailed_statistics.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/add_dose_layout.xml" value="0.5291338582677165" />
         <entry key="app/src/main/res/layout/add_time_layout.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/detailed_stat_events_layout.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.33" />
         <entry key="app/src/main/res/layout/meds_layout.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/refill_meds_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/spinner_item.xml" value="0.33469202898550726" />

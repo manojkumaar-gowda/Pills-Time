@@ -34,7 +34,6 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/ripple_effect"
             android:fontFamily="@font/roboto_light"
-            android:text="@string/medicine_name_hardcoded"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,15 +69,27 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <!--Dose container-->
+        <TextView
+            android:id="@+id/doseHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/dose_advised"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/add_new_dose"
+            tools:ignore="SmallSp" />
+
         <LinearLayout
             android:id="@+id/Dose_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="25dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/add_new_dose">
+            app:layout_constraintTop_toBottomOf="@+id/doseHint">
 
             <EditText
                 android:id="@+id/dose"
@@ -87,11 +98,11 @@
                 android:layout_weight="4"
                 android:autofillHints="No of doses"
                 android:background="@drawable/edit_text_border"
-                android:hint="@string/no_of_doses"
                 android:inputType="number"
                 android:maxLength="4"
                 android:padding="8dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="LabelFor" />
 
             <Spinner
                 android:id="@+id/dose_units"
@@ -105,53 +116,89 @@
         </LinearLayout>
 
         <!--No of units left-->
+        <TextView
+            android:id="@+id/unitsLeftHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/no_of_units_left"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/Dose_container"
+            tools:ignore="SmallSp" />
+
         <EditText
             android:id="@+id/units_left"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="25dp"
             android:autofillHints="Units left"
             android:background="@drawable/edit_text_border"
-            android:hint="@string/no_of_units_left"
             android:inputType="phone"
             android:maxLength="10"
             android:padding="8dp"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@+id/Dose_container" />
+            app:layout_constraintTop_toBottomOf="@+id/unitsLeftHint"
+            tools:ignore="LabelFor" />
 
         <!--Instructions for dose usage-->
+        <TextView
+            android:id="@+id/instructionHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/instructions"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/units_left"
+            tools:ignore="SmallSp" />
+
         <EditText
             android:id="@+id/instruction"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="25dp"
             android:autofillHints="Instructions"
             android:background="@drawable/edit_text_border"
             android:gravity="start"
-            android:hint="@string/instructions"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:padding="8dp"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@+id/units_left" />
+            app:layout_constraintTop_toBottomOf="@+id/instructionHint"
+            tools:ignore="LabelFor" />
 
         <!--day type spinner-->
+        <TextView
+            android:id="@+id/dayTypeSpinnerHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/select_the_type_of_date"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/instruction"
+            tools:ignore="SmallSp" />
+
         <Spinner
             android:id="@+id/dayTypeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/edit_text_border"
             android:padding="8dp"
             android:spinnerMode="dropdown"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@+id/instruction" />
+            app:layout_constraintTop_toBottomOf="@+id/dayTypeSpinnerHint" />
 
         <!--day types-->
         <LinearLayout
@@ -179,13 +226,17 @@
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/add_new_dose">
 
-                <TextView
+                <Button
                     android:id="@+id/from"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:autofillHints="No of doses"
-                    android:background="@drawable/ripple_effect"
                     android:text="@string/click_to_select_start_date"
+                    android:background="@color/time_background"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"
+                    android:padding="10dp"
+                    android:fontFamily="@font/roboto_light"
                     android:textAlignment="center"
                     android:textSize="15sp" />
 
@@ -252,17 +303,20 @@
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/timeContainer">
 
-            <TextView
+            <Button
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_weight="5"
                 android:autofillHints="time"
-                android:background="@drawable/ripple_effect"
+                android:fontFamily="@font/roboto_light"
+                android:background="@drawable/dotted"
+                android:textAllCaps="false"
                 android:padding="5dp"
                 android:text="@string/time"
                 android:textAlignment="center"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/add_time"
@@ -275,7 +329,8 @@
                 android:padding="8dp"
                 android:text="@string/add"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
         <!--Add dose button-->
@@ -308,7 +363,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/roboto_light"
                 android:text="@string/dose_details"
                 android:textAlignment="center"
                 android:textSize="20sp" />
@@ -317,8 +371,10 @@
                 android:id="@+id/DoseRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:scrollbars="horizontal" />
 
         </LinearLayout>

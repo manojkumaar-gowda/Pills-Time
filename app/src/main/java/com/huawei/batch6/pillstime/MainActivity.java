@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.huawei.batch6.pillstime.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
     
     ActivityMainBinding binding;
